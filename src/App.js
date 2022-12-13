@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { CounterEx } from "./components/Hooks/useStateHook/CounterEx";
+import PropTypes from "prop-types";
+import { FetchEx } from "./components/Hooks/useEffectHook/FetchEx";
+import { RefExample } from "./components/Hooks/userefHook/RefExample";
 
 function App() {
+  let count = 0;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CounterEx count={count} />
+      <hr />
+      <FetchEx />
+      <hr />
+      <RefExample />
     </div>
   );
 }
+CounterEx.propTypes = {
+  count: PropTypes.number,
+};
 
 export default App;
